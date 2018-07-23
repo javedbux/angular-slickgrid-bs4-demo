@@ -11,7 +11,8 @@ import {
   GraphqlServiceOption,
   GridOption,
   OperatorType,
-  SortDirection
+  SortDirection,
+  Statistic
 } from 'angular-slickgrid';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -49,6 +50,7 @@ export class GridGraphqlComponent implements OnInit, OnDestroy {
   isWithCursor = false;
   selectedLanguage: string;
   gridStateSub: Subscription;
+  statistics: Statistic;
 
   constructor(private translate: TranslateService) {
     this.selectedLanguage = this.translate.getDefaultLang();
@@ -126,7 +128,10 @@ export class GridGraphqlComponent implements OnInit, OnDestroy {
         // onInit: (query) => this.getCustomerApiCall(query)
         preProcess: () => this.displaySpinner(true),
         process: (query) => this.getCustomerApiCall(query),
-        postProcess: (result: GraphqlResult) => this.displaySpinner(false)
+        postProcess: (result: GraphqlResult) => {
+          this.statistics = result.statistics;
+          this.displaySpinner(false);
+        }
       }
     };
   }
