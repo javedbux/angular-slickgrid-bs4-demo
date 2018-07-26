@@ -212,11 +212,11 @@ MIT
 MIT
 MIT
 
-slickgrid@2.3.19
+slickgrid@2.3.21
 MIT
 MIT
 
-angular-slickgrid@1.1.1
+angular-slickgrid@1.2.9
 MIT
 Copyright (c) 2017-2018, Ghislain B.
 
