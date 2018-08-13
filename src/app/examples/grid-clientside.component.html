@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="container-fluid">
+<div id="demo-container" class="container-fluid">
   <h2>{{title}}</h2>
   <div class="subtitle" [innerHTML]="subTitle"></div>
 
@@ -7,8 +7,8 @@
   <span *ngIf="statistics" style="margin-right: 10px">
       <b>Statistics:</b> {{statistics.startTime | date: 'yyyy-MM-dd HH:mm aaaaa\'m\''}} | {{statistics.itemCount}} of {{statistics.totalItemCount}} items
   </span>
-  <button class="btn btn-default btn-sm" (click)="angularGrid.filterService.clearFilters()">Clear Filters</button>
-  <button class="btn btn-default btn-sm" (click)="angularGrid.sortService.clearSorting()">Clear Sorting</button>
+  <button class="btn btn-outline-secondary btn-sm" (click)="angularGrid.filterService.clearFilters()">Clear Filters</button>
+  <button class="btn btn-outline-secondary btn-sm" (click)="angularGrid.sortService.clearSorting()">Clear Sorting</button>
 
   <angular-slickgrid gridId="grid2"
             [columnDefinitions]="columnDefinitions"
