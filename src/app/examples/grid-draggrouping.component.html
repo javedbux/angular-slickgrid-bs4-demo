@@ -2,7 +2,7 @@
     <h2>{{title}}</h2>
     <div class="subtitle" [innerHTML]="subTitle"></div>
 
-    <form>
+    <form class="form-inline">
         <div class="row col-sm-12">
           <button class="btn btn-outline-secondary btn-xs" (click)="loadData(500)">
             500 rows
@@ -39,14 +39,16 @@
             <br>
         </div>
         <div class="row col-sm-12">
-            <div class="form-group">
-                <label for="field1" class="col-sm-2 control-label">Group by field(s)</label>
-                <div class="col-sm-3" *ngFor="let groupField of selectedGroupingFields; let i = index; trackBy: selectTrackByFn">
-                    <select class="form-control col-sm-6" name="groupField{{i}}" [(ngModel)]="selectedGroupingFields[i]" (ngModelChange)="groupByFieldName($event, i)">
-                        <option value=""></option>
-                        <option [ngValue]="field.id" *ngFor="let field of columnDefinitions">{{field.name}}</option>
-                    </select>
-                </div>
+            <div class="form-row">
+              <div class="form-group">
+                  <label for="field1" class="col-sm-3 mb-2">Group by field(s)</label>
+                  <div class="form-group col-md-3" *ngFor="let groupField of selectedGroupingFields; let i = index; trackBy: selectTrackByFn">
+                      <select class="form-control" name="groupField{{i}}" [(ngModel)]="selectedGroupingFields[i]" (ngModelChange)="groupByFieldName($event, i)">
+                          <option value=""></option>
+                          <option [ngValue]="field.id" *ngFor="let field of columnDefinitions">{{field.name}}</option>
+                      </select>
+                  </div>
+              </div>
             </div>
         </div>
     </form>
