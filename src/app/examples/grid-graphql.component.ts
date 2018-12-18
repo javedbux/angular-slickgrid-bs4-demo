@@ -13,8 +13,8 @@ import {
   OperatorType,
   SortDirection,
   Statistic
-} from 'angular-slickgrid';
-import { Subscription } from 'rxjs/Subscription';
+} from 'angular-slickgrid'; 
+import { Subscription } from 'rxjs';
 
 const defaultPageSize = 20;
 const GRAPHQL_QUERY_DATASET_NAME = 'users';

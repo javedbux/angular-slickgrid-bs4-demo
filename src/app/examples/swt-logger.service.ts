@@ -5,8 +5,8 @@
  * @author Saber Chebka, saber.chebka@gmail.com
  */
 import {Inject, Injectable, Optional, PLATFORM_ID} from '@angular/core';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+
+
 
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {isPlatformBrowser} from '@angular/common';
