@@ -19,5 +19,8 @@
     ],
     "module": "es2015",
     "baseUrl": "./"
+  },
+  "angularCompilerOptions": {
+    "preserveWhitespaces": true
   }
 }
