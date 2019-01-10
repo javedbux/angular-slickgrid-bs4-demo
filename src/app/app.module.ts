@@ -9,6 +9,7 @@ import { GridColspanComponent } from './examples/grid-colspan.component';
 import { GridDraggableGroupingComponent } from './examples/grid-draggrouping.component';
 import { GridEditorComponent } from './examples/grid-editor.component';
 import { GridFormatterComponent } from './examples/grid-formatter.component';
+import { GridFrozenComponent } from './examples/grid-frozen.component';
 import { GridGraphqlComponent } from './examples/grid-graphql.component';
 import { GridGroupingComponent } from './examples/grid-grouping.component';
 import { GridHeaderMenuComponent } from './examples/grid-headermenu.component';
@@ -68,6 +69,7 @@ export function appInitializerFactory(translate: TranslateService, injector: Inj
     GridEditorComponent,
     GridDraggableGroupingComponent,
     GridFormatterComponent,
+    GridFrozenComponent,
     GridGraphqlComponent,
     GridGroupingComponent,
     GridHeaderButtonComponent,
