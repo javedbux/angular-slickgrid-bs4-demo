@@ -66,5 +66,11 @@
  * @author: Ghislain B. (ghiscoding)
  *//*!
 
+/* SlickGrid Bootstrap variables *//*!
+ * SlickGrid custom styling for Bootstrap (https://github.com/ghiscoding/angular-slickgrid)
+ * Licensed under MIT (https://github.com/ghiscoding/angular-slickgrid/blob/master/LICENSE)
+ * @author: Ghislain B. (ghiscoding)
+ *//*!
+
 /* SlickGrid Bootstrap variables */.ui-autocomplete{position:absolute;z-index:1000;padding:0;margin-top:2px;list-style:none;background-color:#fff;border:1px solid rgba(0,0,0,.15);border-radius:4px;box-shadow:0 6px 12px rgba(0,0,0,.175);background-clip:padding-box;max-height:25vh;min-height:75px;min-width:50px;overflow-y:auto}.ui-autocomplete li div{clear:both;display:block;color:#333;padding:3px 15px;font-weight:400;line-height:1.42857143;white-space:nowrap}.ui-state-active,.ui-state-focus,.ui-state-hover{cursor:pointer;text-decoration:none;color:#262626;background-color:#e2edfa}.ui-helper-hidden-accessible{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;position:absolute;padding:0;width:1px}
-/*# sourceMappingURL=styles.4c5e3af1ba37e12f7b79.css.map*/
+/*# sourceMappingURL=styles.abc849327d7c7028f7e4.css.map*/
