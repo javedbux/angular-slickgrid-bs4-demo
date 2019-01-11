@@ -328,18 +328,6 @@ export class GridEditorComponent implements OnInit {
           collectionAsync: this.http.get(URL_COUNTRIES_COLLECTION),
         }
       }, {
-        id: 'countryOfOriginName', name: 'Country of Origin Name', field: 'countryOfOriginName',
-        filterable: true,
-        minWidth: 100,
-        editor: {
-          model: Editors.autoComplete,
-          collectionAsync: this.http.get(URL_COUNTRY_NAMES),
-        },
-        filter: {
-          model: Filters.autoComplete,
-          collectionAsync: this.http.get(URL_COUNTRY_NAMES),
-        }
-      }, {
         id: 'effort-driven',
         name: 'Effort Driven',
         field: 'effortDriven',
@@ -516,7 +504,6 @@ export class GridEditorComponent implements OnInit {
         effortDriven: (i % 5 === 0),
         prerequisites: (i % 2 === 0) && i !== 0 && i < 12 ? [i, i - 1] : [],
         countryOfOrigin: (i % 2) ? { code: 'CA', name: 'Canada' } : { code: 'US', name: 'United States' },
-        countryOfOriginName: (i % 2) ? 'Canada' : 'United States',
         cityOfOrigin: (i % 2) ? 'Vancouver, BC, Canada' : 'Boston, MA, United States',
       });
     }
