@@ -250,17 +250,16 @@ export class GridEditorComponent implements OnInit {
         name: 'Finish',
         field: 'finish',
         minWidth: 100,
-        filterable: true,
+        filterable: true, sortable: true,
         filter: { model: Filters.compoundDate },
-        formatter: Formatters.dateIso,
-        sortable: true,
+        formatter: Formatters.dateIso,        
         type: FieldType.date,
         editor: {
           model: Editors.date
         },
       }, {
         id: 'cityOfOrigin', name: 'City of Origin', field: 'cityOfOrigin',
-        filterable: true,
+        filterable: true, sortable: true,
         minWidth: 100,
         editor: {
           model: Editors.autoComplete,
@@ -317,7 +316,7 @@ export class GridEditorComponent implements OnInit {
         labelKey: 'name',
         type: FieldType.object,
         sorter: Sorters.objectString, // this sorter requires the dataKey and assume that obj1[dataKey] will be a string so it can sort it that way
-        filterable: true,
+        filterable: true, sortable: true,
         minWidth: 100,
         editor: {
           model: Editors.autoComplete,
