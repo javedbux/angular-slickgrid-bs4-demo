@@ -662,10 +662,10 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
-angular-slickgrid@^2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/angular-slickgrid/-/angular-slickgrid-2.1.5.tgz#4bdea0f26cc402ee873c3511685fd4282501c3d8"
-  integrity sha512-EQWj1Ga/w88bTA+mEZMBqLSx7Jil1urQGQcELn7bHxpxkbFSLCURP3blVPlLFnsqvucEuG1zaZrAgl828c8hZw==
+angular-slickgrid@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/angular-slickgrid/-/angular-slickgrid-2.1.6.tgz#2f8601ec295aa8c46ded382db9da132af0a11bcb"
+  integrity sha512-7YuMR+uojrM4GIE9jKDOyLFi3sA7Rn1OfT7quFYhkP0OuRxfqrB7Gd3tBNP+hKML/3fWFaP4SXruyDxfsbBrww==
   dependencies:
     "@ngx-translate/core" "^11.0.1"
     "@ngx-translate/http-loader" "^4.0.0"
@@ -7246,7 +7246,7 @@ slash@^1.0.0:
 
 "slickgrid@github:6pac/SlickGrid":
   version "2.4.1"
-  resolved "https://codeload.github.com/6pac/SlickGrid/tar.gz/a08fb1bf2852f6206247daf3233248e1d953753f"
+  resolved "https://codeload.github.com/6pac/SlickGrid/tar.gz/83c7efe21f9d2bd5598a9bb7693fa7bf433827c6"
   dependencies:
     jquery ">=1.8.0"
     jquery-ui ">=1.8.0"
