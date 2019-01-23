@@ -663,9 +663,9 @@ amdefine@>=0.0.4:
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
 angular-slickgrid@^2.1.8:
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/angular-slickgrid/-/angular-slickgrid-2.1.8.tgz#4cceed1a8ebe8cad14184b7d4633ce3ee7d51685"
-  integrity sha512-ZglR7e79++1DbOY8cUvEvQcDHE4eStpx9E/AkBX4cHTN3gEXTkA9zfDU6QNr3wLf9FMh0k/8AJFGwzDxT+Xv8Q==
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/angular-slickgrid/-/angular-slickgrid-2.1.9.tgz#e8f3c8aff1905ddffb37ae852b7bd8c070318f54"
+  integrity sha512-3wSGG+5kXRsiJzuDK4GU1ZJw7FLsnXweRgsRrunT0AKL2IF/uFZVQHprwud1qQ5H+CHRduWJBpux8OpAkB4jbw==
   dependencies:
     "@ngx-translate/core" "^11.0.1"
     "@ngx-translate/http-loader" "^4.0.0"
@@ -7245,8 +7245,8 @@ slash@^1.0.0:
   integrity sha1-xB8vbDn8FtHNF61LXYlhFK5HDVU=
 
 "slickgrid@github:6pac/SlickGrid":
-  version "2.4.1"
-  resolved "https://codeload.github.com/6pac/SlickGrid/tar.gz/83c7efe21f9d2bd5598a9bb7693fa7bf433827c6"
+  version "2.4.2"
+  resolved "https://codeload.github.com/6pac/SlickGrid/tar.gz/22628c7a05da1bb4d3b64f6c26f63de8507b4f4a"
   dependencies:
     jquery ">=1.8.0"
     jquery-ui ">=1.8.0"
