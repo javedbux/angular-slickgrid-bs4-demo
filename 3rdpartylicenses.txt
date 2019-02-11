@@ -147,9 +147,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-slickgrid
-MIT
-
 rxjs
 Apache-2.0
                                Apache License
@@ -355,6 +352,9 @@ Apache-2.0
  limitations under the License.
  
 
+
+slickgrid
+MIT
 
 @ngx-translate/http-loader
 MIT
