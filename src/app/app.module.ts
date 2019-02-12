@@ -85,6 +85,8 @@ export function appInitializerFactory(translate: TranslateService, injector: Inj
     GridRowMoveComponent,
     GridRowSelectionComponent,
     GridStateComponent,
+    RowDetailPreloadComponent,
+    RowDetailViewComponent,
     SwtCommonGridTestComponent,
     SwtCommonGridPaginationComponent,
     SwtCommonGridComponent,
