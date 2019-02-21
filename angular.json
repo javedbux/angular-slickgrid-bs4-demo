@@ -45,6 +45,7 @@
               "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/flatpickr/dist/flatpickr.css",
               "node_modules/angular-slickgrid/lib/multiple-select/multiple-select.css",
+              "node_modules/@ng-select/ng-select/themes/default.theme.css",
               "src/styles.scss",
               "src/slickgrid-styles.scss"
             ],
@@ -121,6 +122,7 @@
               "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/flatpickr/dist/flatpickr.css",
               "node_modules/angular-slickgrid/lib/multiple-select/multiple-select.css",
+              "node_modules/@ng-select/ng-select/themes/default.theme.css",
               "src/styles.scss",
               "src/slickgrid-styles.scss"
             ],

@@ -240,6 +240,7 @@ export class GridEditorComponent implements OnInit {
         filterable: true,
         filter: { model: Filters.compoundDate },
         formatter: Formatters.dateIso,
+        exportWithFormatter: true,
         sortable: true,
         type: FieldType.date,
         editor: {
@@ -250,16 +251,18 @@ export class GridEditorComponent implements OnInit {
         name: 'Finish',
         field: 'finish',
         minWidth: 100,
-        filterable: true, sortable: true,
+        filterable: true,
+        sortable: true,
         filter: { model: Filters.compoundDate },
-        formatter: Formatters.dateIso,        
+        formatter: Formatters.dateIso,
+        exportWithFormatter: true,
         type: FieldType.date,
         editor: {
           model: Editors.date
         },
       }, {
         id: 'cityOfOrigin', name: 'City of Origin', field: 'cityOfOrigin',
-        filterable: true, sortable: true,
+        filterable: true,
         minWidth: 100,
         editor: {
           model: Editors.autoComplete,
@@ -277,9 +280,7 @@ export class GridEditorComponent implements OnInit {
                 data: {
                   q: request.term
                 },
-                success: (data) => {
-                  response(data);
-                }
+                success: (data) => response(data)
               });
             }
           },
@@ -302,9 +303,7 @@ export class GridEditorComponent implements OnInit {
                 data: {
                   q: request.term
                 },
-                success: (data) => {
-                  response(data);
-                }
+                success: (data) => response(data)
               });
             }
           },
@@ -312,11 +311,13 @@ export class GridEditorComponent implements OnInit {
       }, {
         id: 'countryOfOrigin', name: 'Country of Origin', field: 'countryOfOrigin',
         formatter: Formatters.complexObject,
+        exportWithFormatter: true,
         dataKey: 'code',
         labelKey: 'name',
         type: FieldType.object,
         sorter: Sorters.objectString, // this sorter requires the dataKey and assume that obj1[dataKey] will be a string so it can sort it that way
-        filterable: true, sortable: true,
+        filterable: true,
+        sortable: true,
         minWidth: 100,
         editor: {
           model: Editors.autoComplete,
@@ -327,6 +328,19 @@ export class GridEditorComponent implements OnInit {
           model: Filters.autoComplete,
           customStructure: { label: 'name', value: 'code' },
           collectionAsync: this.http.get(URL_COUNTRIES_COLLECTION),
+        }
+      }, {
+        id: 'countryOfOriginName', name: 'Country of Origin Name', field: 'countryOfOriginName',
+        filterable: true,
+        sortable: true,
+        minWidth: 100,
+        editor: {
+          model: Editors.autoComplete,
+          collectionAsync: this.http.get(URL_COUNTRY_NAMES),
+        },
+        filter: {
+          model: Filters.autoComplete,
+          collectionAsync: this.http.get(URL_COUNTRY_NAMES),
         }
       }, {
         id: 'effort-driven',
@@ -505,6 +519,7 @@ export class GridEditorComponent implements OnInit {
         effortDriven: (i % 5 === 0),
         prerequisites: (i % 2 === 0) && i !== 0 && i < 12 ? [i, i - 1] : [],
         countryOfOrigin: (i % 2) ? { code: 'CA', name: 'Canada' } : { code: 'US', name: 'United States' },
+        countryOfOriginName: (i % 2) ? 'Canada' : 'United States',
         cityOfOrigin: (i % 2) ? 'Vancouver, BC, Canada' : 'Boston, MA, United States',
       });
     }
