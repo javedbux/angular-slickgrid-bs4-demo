@@ -205,6 +205,12 @@ export class GridGraphqlComponent implements OnInit, OnDestroy {
     });
   }
 
+  clearAllFiltersAndSorts() {
+    if (this.angularGrid && this.angularGrid.gridService) {
+      this.angularGrid.gridService.clearAllFiltersAndSorts();
+    }
+  }
+
   /** Save current Filters, Sorters in LocaleStorage or DB */
   saveCurrentGridState(grid) {
     console.log('GraphQL current grid state', this.angularGrid.gridStateService.getCurrentGridState());
