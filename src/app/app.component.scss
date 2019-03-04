@@ -1,8 +1,8 @@
-$navbar-height: 50px;
+$navbar-height: 58px;
 $side-menu-width: 250px;
 
 .body-content {
-  margin-top: 58px;
+  margin-top: $navbar-height;
 }
 .lightblue {
   color: lightblue;
@@ -17,6 +17,10 @@ $side-menu-width: 250px;
     opacity: 0.5;
 }
 
+section {
+  margin: 0;
+}
+
 /** Sidebar (left) and Content (right) */
 @media (min-width: 1200px) {
   .panel-wm-content .container {
@@ -29,6 +33,10 @@ $side-menu-width: 250px;
 
   .nav-stacked {
     padding-bottom: 30px;
+
+    .nav-item {
+      width: 100%;
+    }
   }
 
   .nav > li > a {
