@@ -3,6 +3,15 @@
     <h2>{{title}}</h2>
     <div class="subtitle" [innerHTML]="subTitle"></div>
 
+    <button class="btn btn-outline-secondary btn-sm" (click)="toggleGridMenu($event)">
+        <i class="fa fa-bars"></i>
+        Grid Menu
+    </button>
+    <button class="btn btn-outline-secondary btn-sm" (click)="switchLanguage()">
+        <i class="fa fa-language"></i>
+        Switch Language
+    </button>
+
     <div class="col-sm-12">
         <angular-slickgrid gridId="grid2"
             (onAngularGridCreated)="angularGridReady($event)"
