@@ -28,7 +28,7 @@ export class CustomAngularComponentFilter implements Filter {
   callback: FilterCallback;
   operator: OperatorType | OperatorString = OperatorType.equal;
 
-  constructor() {}
+  constructor() { }
 
   /** Angular Util Service (could be inside the Grid Options Params or the Filter Params ) */
   get angularUtilService(): AngularUtilService {
@@ -78,7 +78,7 @@ export class CustomAngularComponentFilter implements Filter {
         $($headerElm).empty();
         const componentOuput = this.angularUtilService.createAngularComponentAppendToDom(this.columnFilter.params.component, $headerElm);
         this.componentRef = componentOuput.componentRef;
-console.log(componentOuput)
+
         // here we override the collection object of the Angular Component
         // but technically you can pass any values you wish to your Component
         Object.assign(componentOuput.componentRef.instance, { collection: this.collection });
