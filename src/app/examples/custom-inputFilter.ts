@@ -1,9 +1,20 @@
-import { Column, Filter, FilterArguments, FilterCallback, OperatorType, OperatorString, SearchTerm } from 'angular-slickgrid';
+import {
+  Column,
+  ColumnFilter,
+  Filter,
+  FilterArguments,
+  FilterCallback,
+  GridOption,
+  OperatorType,
+  OperatorString,
+  SearchTerm,
+} from 'angular-slickgrid';
 
 // using external non-typed js libraries
 declare var $: any;
 
 export class CustomInputFilter implements Filter {
+  private _clearFilterTriggered = false;
   private $filterElm: any;
   grid: any;
   searchTerms: SearchTerm[];
@@ -11,7 +22,17 @@ export class CustomInputFilter implements Filter {
   callback: FilterCallback;
   operator: OperatorType | OperatorString = OperatorType.equal;
 
-  constructor() {}
+  constructor() { }
+
+  /** Getter for the Column Filter */
+  get columnFilter(): ColumnFilter {
+    return this.columnDef && this.columnDef.filter || {};
+  }
+
+  /** Getter for the Grid Options pulled through the Grid Object */
+  get gridOptions(): GridOption {
+    return (this.grid && this.grid.getOptions) ? this.grid.getOptions() : {};
+  }
 
   /**
    * Initialize the Filter
@@ -32,7 +53,21 @@ export class CustomInputFilter implements Filter {
     this.$filterElm = this.createDomElement(filterTemplate, searchTerm);
 
     // step 3, subscribe to the keyup event and run the callback when that happens
-    this.$filterElm.keyup((e: any) => this.callback(e, { columnDef: this.columnDef }));
+    this.$filterElm.keyup((e: any) => {
+      let value = e && e.target && e.target.value || '';
+      if (typeof value === 'string' && this.columnFilter.enableTrimWhiteSpace) {
+        value = value.trim();
+      }
+
+      if (this._clearFilterTriggered) {
+        this.callback(e, { columnDef: this.columnDef, clearFilterTriggered: this._clearFilterTriggered });
+        this._clearFilterTriggered = false; // reset flag for next use
+        this.$filterElm.removeClass('filled');
+      } else {
+        value === '' ? this.$filterElm.removeClass('filled') : this.$filterElm.addClass('filled');
+        this.callback(e, { columnDef: this.columnDef, searchTerms: [value] });
+      }
+    });
   }
 
   /**
@@ -40,6 +75,7 @@ export class CustomInputFilter implements Filter {
    */
   clear() {
     if (this.$filterElm) {
+      this._clearFilterTriggered = true;
       this.$filterElm.val('');
       this.$filterElm.trigger('keyup');
     }
@@ -71,7 +107,11 @@ export class CustomInputFilter implements Filter {
    * Create the HTML template as a string
    */
   private buildTemplateHtmlString() {
-    return `<input type="text" class="form-control search-filter" placeholder="Custom Filter">`;
+    let placeholder = (this.gridOptions) ? (this.gridOptions.defaultFilterPlaceholder || '') : '';
+    if (this.columnFilter && this.columnFilter.placeholder) {
+      placeholder = this.columnFilter.placeholder;
+    }
+    return `<input type="text" class="form-control search-filter" placeholder="${placeholder}">`;
   }
 
   /**
